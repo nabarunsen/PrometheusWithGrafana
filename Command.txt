@@ -1,0 +1,1 @@
+kubectl get secret $(kubectl get sa prometheus -o jsonpath='{.secrets[0].name}' -n default) -o jsonpath='{.data.token}' -n default | base64 --decode
